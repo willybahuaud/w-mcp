@@ -21,6 +21,8 @@ class WMCP_Abilities {
 		// Socle, toujours autorisé.
 		'WMCP_Ability_Request_Capability',
 		'WMCP_Ability_Site_Context',
+		'WMCP_Ability_Site_Structure',
+		'WMCP_Ability_Site_Docs',
 		'WMCP_Ability_My_Permissions',
 		// Contenus.
 		'WMCP_Ability_Content_Query',

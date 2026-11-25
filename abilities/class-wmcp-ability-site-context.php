@@ -69,6 +69,9 @@ class WMCP_Ability_Site_Context extends WMCP_Ability {
 			'site_name'  => get_bloginfo( 'name' ),
 			'site_url'   => home_url( '/' ),
 			'guidelines' => '' !== $guidelines ? $guidelines : 'No guidelines have been written for this site yet. Stay cautious and ask the user before any significant change.',
+			// Annoncés ici pour que l'IA sache qu'ils existent sans appel de plus.
+			'documents'  => ( new WMCP_Document_Store() )->get_index(),
+			'next_steps' => 'Call wmcp/site-structure to learn how the site is built. If a document listed here matches the task, read it with wmcp/site-docs before starting.',
 		);
 	}
 }

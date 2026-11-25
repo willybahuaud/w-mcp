@@ -3,7 +3,7 @@
  * Plugin Name:       W-MCP
  * Plugin URI:        https://github.com/willybahuaud/w-mcp
  * Description:       Encadre l'accès MCP du site : droits par utilisateur pilotés depuis WBoard, journal des actions, remontée des besoins non couverts.
- * Version:           0.3.0
+ * Version:           0.4.0
  * Requires at least: 7.1
  * Requires PHP:      8.2
  * Author:            Willy Bahuaud
@@ -16,7 +16,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'WMCP_VERSION', '0.3.0' );
+define( 'WMCP_VERSION', '0.4.0' );
 define( 'WMCP_FILE', __FILE__ );
 define( 'WMCP_PATH', plugin_dir_path( __FILE__ ) );
 

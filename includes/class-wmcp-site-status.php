@@ -58,6 +58,7 @@ class WMCP_Site_Status {
 			'policy_version'      => $resolver->get_version(),
 			'paused'              => $resolver->is_paused(),
 			'has_site_context'    => '' !== $this->services->policy_store->get_site_context(),
+			'documents_count'     => ( new WMCP_Document_Store() )->count(),
 			'log'                 => array(
 				// Lignes non écrites : refusées par la base, ou au-delà du plafond horaire.
 				'unwritten'         => WMCP_Logger::get_health(),

@@ -74,7 +74,7 @@ claude.ai ne se connecte qu'en OAuth. L'adapter publié n'en fournit pas encore,
 - **Ordre** : exceptions de l'utilisateur (`deny` puis `allow`), puis profil (`deny`, puis `allow` et niveau).
 - **Exception `allow` d'un utilisateur** : elle ignore le niveau, c'est son rôle.
 - **`can_publish: false`** : une demande de publication devient « en attente », et ce qui est déjà en ligne n'est plus modifiable (contenus, compositions, termes, médias, modèles).
-- **Toujours autorisées** pour un utilisateur de la matrice : `wmcp/request-capability`, `wmcp/my-permissions`, `wmcp/site-context`, et les trois outils relais `mcp-adapter/*`.
+- **Toujours autorisées** pour un utilisateur de la matrice : `wmcp/request-capability`, `wmcp/my-permissions`, `wmcp/site-context`, `wmcp/site-structure`, `wmcp/site-docs`, et les trois outils relais `mcp-adapter/*`.
 - **Abilities tierces** (WooCommerce, extension custom) : la matrice travaille sur le nom, peu importe le fournisseur.
 
 Une matrice invalide est rejetée en bloc, l'ancienne reste en place. Une version inférieure à celle en place est refusée.
@@ -109,6 +109,8 @@ Autres règles :
 |---|---|---|
 | `wmcp/request-capability` | write | Remonte un besoin non couvert |
 | `wmcp/site-context` | read | Document de cadrage du site |
+| `wmcp/site-structure` | read | Structure du site lue en direct : types de contenu, taxonomies, champs, menus, thème |
+| `wmcp/site-docs` | read | Documents rédigés par le prestataire, listés puis lus un par un |
 | `wmcp/my-permissions` | read | Droits de l'utilisateur courant |
 | `wmcp/content-query` | read | Recherche et lecture de contenus |
 | `wmcp/content-create` | write | Création |

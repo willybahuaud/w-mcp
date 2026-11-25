@@ -190,7 +190,7 @@ class WMCP_Rest {
 	/**
 	 * POST /policy : remplace la matrice et, s'il est fourni, le document de cadrage.
 	 *
-	 * @param WP_REST_Request $request Requête, corps JSON `{ policy, site_context? }`.
+	 * @param WP_REST_Request $request Requête, corps JSON `{ policy, site_context?, documents? }`.
 	 * @return WP_REST_Response|WP_Error
 	 */
 	public function put_policy( WP_REST_Request $request ) {
@@ -202,6 +202,10 @@ class WMCP_Rest {
 		}
 		if ( isset( $body['site_context'] ) && is_string( $body['site_context'] ) ) {
 			$this->services->policy_store->save_site_context( $body['site_context'] );
+		}
+		// Clé absente : un board qui ne connaît pas les documents n'efface pas ceux en place.
+		if ( isset( $body['documents'] ) && is_array( $body['documents'] ) ) {
+			( new WMCP_Document_Store() )->replace_all( $body['documents'] );
 		}
 
 		return rest_ensure_response(

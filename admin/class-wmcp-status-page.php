@@ -81,6 +81,7 @@ class WMCP_Status_Page {
 			__( 'Policy version', 'w-mcp' )      => $status['policy_version'] > 0 ? (string) $status['policy_version'] : __( 'None: MCP access is closed.', 'w-mcp' ),
 			__( 'MCP access', 'w-mcp' )          => $status['paused'] ? __( 'Paused', 'w-mcp' ) : __( 'Open to users of the policy', 'w-mcp' ),
 			__( 'Site guidelines', 'w-mcp' )     => $status['has_site_context'] ? __( 'In place', 'w-mcp' ) : __( 'Not written yet', 'w-mcp' ),
+			__( 'Site documents', 'w-mcp' )      => (string) $status['documents_count'],
 			__( 'Last log collection', 'w-mcp' ) => '' !== $status['log']['last_collected_at'] ? $status['log']['last_collected_at'] . ' UTC' : __( 'Never', 'w-mcp' ),
 			__( 'Log entries', 'w-mcp' )         => (string) $status['log']['last_id'],
 			__( 'Capability requests', 'w-mcp' ) => (string) $status['requests']['last_id'],

@@ -26,8 +26,8 @@ class WMCP_Policy_Resolver {
 	 *
 	 * Les trois outils de l'adapter ne font que relayer : le contrôle réel porte
 	 * sur l'ability visée. Ils sont nommés un par un : un joker autoriserait
-	 * d'office tout outil que l'adapter ajouterait plus tard. Les trois `wmcp/` sont le socle du concept (comprendre
-	 * ses droits, lire le cadrage, remonter un besoin).
+	 * d'office tout outil que l'adapter ajouterait plus tard. Les cinq `wmcp/` sont le socle du concept (comprendre
+	 * ses droits, lire le cadrage et les documents, connaître la structure du site, remonter un besoin).
 	 *
 	 * @var string[]
 	 */
@@ -38,6 +38,8 @@ class WMCP_Policy_Resolver {
 		'wmcp/request-capability',
 		'wmcp/my-permissions',
 		'wmcp/site-context',
+		'wmcp/site-structure',
+		'wmcp/site-docs',
 	);
 
 	/**
